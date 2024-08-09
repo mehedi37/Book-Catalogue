@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Create | Catalogue";
+}
+<h1>Add New Book</h1>
+<form asp-action="Create" method="post">
+    <div class="form-group mb-2">
+        <label class="control-label">Book Title</label>
+        <input class="form-control" type="text" name="Title" placeholder="Enter Book Name" required/>
+    </div>
+    <div class="form-group mb-2">
+        <label class="control-label">Book Cover Pic</label>
+        <input class="form-control" type="text" name="Cover" placeholder="Pic Url" required />
+    </div>
+    <div class="form-group mb-2">
+        <label class="control-label">Autor</label>
+        <input class="form-control" name="Author" type="text" placeholder="Who is the author" required/>
+    </div>
+    <div class="form-group mb-2">
+        <label class="control-label">Description</label>
+        <textarea class="form-control" name="Description"  placeholder="Tell me about this book"></textarea>
+    </div>
+    <div class="form-group mb-2">
+        <label class="control-label">ISBN Number</label>
+        <input class="form-control" type="text" name="ISBN" required />
+    </div>
+    <div class="form-group mb-2">
+        <label class="control-label">Publisher</label>
+        <input class="form-control" type="text" name="Publisher" placeholder="Published by ?" required />
+    </div>
+    <div class="form-group mb-2">
+        <label class="control-label">Publish Date</label>
+        <input class="form-control" type="date" name="PublishDate" required />
+    </div>
+    <div class="form-group mb-2">
+        <button class="btn btn-primary" type="submit">Create</button>
+    </div>
+</form>
+

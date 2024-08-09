@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Books>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="">
+    <h1 class="text-center">Welcome To Book Catalogue</h1>
+    <div class="d-flex">
+        @foreach (var book in Model)
+        {
+            <div class="overflow-auto" style="height: 400px">
+                <div class="card m-2" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="@book.Cover" class="img-fluid rounded-start h-100" />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">@book.Title</h5>
+                                <p class="card-text font-monospace">
+                                    <small class="text-muted font-monospace">
+                                        <b>Author:</b> @book.Author
+                                    </small>
+                                </p>
+                                <p class="card-text font-monospace">
+                                    <small class="text-muted">
+                                        <b>Publisher:</b> @book.Publisher
+                                    </small>
+                                </p>
+                                <p class="card-text font-monospace">
+                                    <small class="text-muted font-monospace">
+                                        @book.ISBN | <small class="text-muted">@book.PublishDate.ToShortDateString()</small>
+                                    </small>
+                                </p>
+                                <p class="card-text font-monospace">
+                                    <small class="text-muted">
+                                        @(book.Description.Length > 100 ? $"{book.Description.Trim().Substring(0, 100)} ..." : book.Description)
+                                    </small>
+                                </p> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
